@@ -92,15 +92,15 @@
 							<input type="hidden" name="option_select5" value="Half Marathon & Bus">
 							<input type="hidden" name="option_amount5" value="45.00">
 							<input type="hidden" name="option_index" value="0">
-							Enter Coupon code [coup1] &gt;
+<!-- 							Enter Coupon code [coup1] &gt;
 							<input type = "text"
 							size = "10"
-							name = "1time10%"; />
+							name = "coupcode"; />
 
 							<input type="button" value="Check Coupon Code"
 							onclick="coupval = this.form.coupcode.value;
 							ChkCoup();" />
-							<br/>
+							<br/> -->
 							<br/>
 							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
@@ -151,12 +151,11 @@ function ChkCoup () { // check user coupon entry
 var i;
 discnt = 0; // assume the worst
 for (i=0; i<coupons.length; i++) {
-if (coupval == coupons[i]) {
-discnt = coupdc[i]; // remember the discount amt
-alert ("Valid coupon number! \n\n" + discnt +
-"% discount now in effect.");
-return;
-}
+  if (coupval == coupons[i]) {
+    discnt = coupdc[i]; // remember the discount amt
+    alert ("Valid coupon number! \n\n" + discnt + "% discount now in effect.");
+    return;
+  }
 }
 alert ("'" + coupval + "' is not a valid code!");
 }
